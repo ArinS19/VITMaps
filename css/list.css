@@ -1,0 +1,32 @@
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.list-controls input,
+.list-controls select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.list-controls button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #1e1e2f;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.rating-stars {
+    color: gold;
+    margin-bottom: 8px;
+}

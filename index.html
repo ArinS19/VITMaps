@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VITMaps</title>
+    <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+
+    <!-- TOP NAVBAR -->
+    <header class="navbar">
+        <div class="logo">VITMaps</div>
+        <div class="account">My Account</div>
+    </header>
+
+    <!-- MAP SECTION -->
+    <section class="map-section">
+    <div id="map-container">
+
+        <!-- Sliding Panel INSIDE map -->
+        <div id="map-popup" class="map-popup">
+            <div class="popup-content">
+
+                <div class="popup-header">
+                    <div class="popup-actions">
+                        <button>Share</button>
+                        <button>Save</button>
+                        <button id="closePopupBtn">X</button>
+                    </div>
+                </div>
+
+                <div class="popup-body">
+                    <div class="popup-left">
+                        <h3 id="popup-name">Place Name</h3>
+                        <p id="popup-type"></p>
+                        <p id="popup-rating"></p>
+                        <p id="popup-desc"></p>
+                        <div id="popup-menu"></div>
+                    </div>
+
+                    <div class="popup-right">
+                        <img id="popup-image" src="" alt="Place Image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+        </section>
+    <!-- CATEGORY CARDS -->
+<section class="categories">
+
+    <div class="category-wrapper">
+        <div class="category-card" data-type="food">Food</div>
+        <div class="sub-tabs"></div>
+    </div>
+
+    <div class="category-wrapper">
+        <div class="category-card" data-type="academic">Blocks / Admin</div>
+        <div class="sub-tabs"></div>
+    </div>
+
+    <div class="category-wrapper">
+        <div class="category-card" data-type="hostel">Hostels</div>
+        <div class="sub-tabs"></div>
+    </div>
+
+    <div class="category-wrapper">
+        <div class="category-card" data-type="sports">Sports Areas</div>
+        <div class="sub-tabs"></div>
+    </div>
+
+    <div class="category-wrapper">
+        <div class="category-card" data-type="near-campus">Near Campus</div>
+        <div class="sub-tabs"></div>
+    </div>
+
+</section>
+    <!-- Leaflet JS -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/cards.js"></script>
+</body>
+</html>

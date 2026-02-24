@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Gymkhana",
+    "type": "food",
+    "rating": 4.2,
+    "description": "Popular campus food court serving multiple cuisines.",
+    "menu": ["Pizza", "Burger", "Meals"],
+    "coordinates": [12.8406, 80.1532],
+    "image": "assets/images/placeholder.jpg"
+  }
+]
