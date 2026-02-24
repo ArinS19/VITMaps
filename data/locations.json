@@ -8,5 +8,15 @@
     "menu": ["Pizza", "Burger", "Meals"],
     "coordinates": [12.8406, 80.1532],
     "image": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 2,
+    "name": "AB1",
+    "type": "academic",
+    "rating": 4.5,
+    "description": "Academic Block 1 - CSE and IT departments.",
+    "menu": [],
+    "coordinates": [12.8415, 80.1525],
+    "image": "assets/images/placeholder.jpg"
   }
 ]

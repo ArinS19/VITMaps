@@ -1,3 +1,30 @@
+.list-container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.list-info {
+    width: 60%;
+}
+
+.list-image {
+    width: 35%;
+}
+
+.list-image img {
+    width: 100%;
+    border-radius: 8px;
+}
 .list-header {
     display: flex;
     justify-content: space-between;

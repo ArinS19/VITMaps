@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const subTabsContainer = wrapper.querySelector(".sub-tabs");
 
             if (type === "near-campus") {
-                window.location.href = "pages/near-campus.html";
+                window.location.href = "pages/nearcampus.html";
                 return;
             }
 
