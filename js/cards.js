@@ -26,15 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
             expandCard(wrapper, subTabsContainer, type);
             filterMarkers(type);
 
-            // 🔥 Soft upward scroll
-            const mapSection = document.getElementById("mapSection");
-            if (mapSection) {
-                window.scrollTo({
-                    top: mapSection.offsetTop - 60,  // adjust this number if needed
-                    behavior: "smooth"
-                });
-}
-
         });
 
     });
