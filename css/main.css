@@ -18,7 +18,6 @@
     z-index: 9999;
 }
 
-/* Add spacing so content doesn't go under navbar */
 body {
     padding-top: 70px;
 }

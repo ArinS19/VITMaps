@@ -7,7 +7,7 @@
     "description": "A proper sit-down restaurant on campus serving authentic main courses and specialty cuisines.",
     "menu": ["Butter Naan", "Paneer Butter Masala", "Chicken Tikka", "Fried Rice"],
     "coordinates": [12.843577424883442, 80.15265340542219],
-    "image": "assets/images/gymkhana.jpg"
+    "image": "assets/images/placeholder.jpg"
   },
   {
     "id": 2,
@@ -167,6 +167,26 @@
     "description": "Open-air theater used for cultural events, fests, and student gatherings.",
     "menu": [],
     "coordinates": [12.841351951387656, 80.15407343102608],
+    "image": "assets/images/amphitheater.jpg"
+  },
+    {
+    "id": 31,
+    "name": "MG AUditorium",
+    "type": "other",
+    "rating": 4.9,
+    "description": "Open-air theater used for cultural events, fests, and student gatherings.",
+    "menu": [],
+    "coordinates": [12.839637757437512, 80.15513797365159],
+    "image": "assets/images/amphitheater.jpg"
+  },
+      {
+    "id": 32,
+    "name": "Concert Ground",
+    "type": "other",
+    "rating": 4.9,
+    "description": "Open-air theater used for cultural events, fests, and student gatherings.",
+    "menu": [],
+    "coordinates": [12.846305146380486, 80.15857876265684],
     "image": "assets/images/amphitheater.jpg"
   },
   {

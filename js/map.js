@@ -89,7 +89,7 @@ fetch("data/locations.json")
 
             if (targetMarker) {
 
-                map.setView(targetMarker.getLatLng(), 17);
+                map.setView(targetMarker.getLatLng(), 20);
                 showPopup(targetMarker.locationData);
 
                 const mapSection = document.getElementById("mapSection");
@@ -107,7 +107,7 @@ function showPopup(data) {
     document.getElementById("popup-name").innerText = data.name;
     document.getElementById("popup-type").innerText = "Type: " + data.type;
     document.getElementById("popup-rating").innerText = "Rating: " + data.rating;
-    document.getElementById("popup-desc").innerText = data.desc;
+    document.getElementById("popup-desc").innerText = data.description;
 
     const menuDiv = document.getElementById("popup-menu");
     menuDiv.innerHTML = "";
