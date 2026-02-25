@@ -1,18 +1,48 @@
 .navbar {
-    height: 60px;
-    background-color: #1e1e2f;
-    color: white;
+    height: 70px;
+    background: linear-gradient(90deg, #1f1f3a, #2b2b55);
+    color: #ffffff;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+
+    padding: 0 60px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+}
+
+/* Add spacing so content doesn't go under navbar */
+body {
+    padding-top: 70px;
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #60a5fa;
 }
 
 .account {
+    padding: 8px 18px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.account:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
 }
