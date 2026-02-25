@@ -1,66 +1,270 @@
+/* ================================================= */
+/*                    MAP SECTION                   */
+/* ================================================= */
+
 .map-section {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
+
 #map-container {
     position: relative;
     width: 90%;
     height: 600px;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
 }
+
+
+/* ================================================= */
+/*                    POPUP PANEL                   */
+/* ================================================= */
 
 .map-popup {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%;
-    background-color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
-
+    height: 48%;
+    background: linear-gradient(180deg, #ffffff, #f4f7fb);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.18);
     transform: translateY(100%);
     transition: transform 0.4s ease-in-out;
-    z-index: 1000;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;   /* 🔥 prevents image overflow */
 }
 
 .map-popup.active {
     transform: translateY(0);
 }
 
+/* ================================================= */
+/*                  POPUP CONTENT                   */
+/* ================================================= */
+
 .popup-content {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    padding: 20px 30px 25px 30px;
+    box-sizing: border-box;
 }
+
+/* ================================================= */
+/*                  POPUP HEADER                    */
+/* ================================================= */
 
 .popup-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-shrink: 0;  /* 🔥 prevents header compression */
+}
+
+/* Large Title */
+.popup-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Action Buttons */
+.popup-actions {
+    display: flex;
+    gap: 10px;
 }
 
 .popup-actions button {
-    margin-left: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e2e8f0;
     cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
 }
+
+.popup-actions button:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ================================================= */
+/*                  POPUP BODY                      */
+/* ================================================= */
 
 .popup-body {
     display: flex;
-    margin-top: 10px;
-    height: 85%;
+    gap: 30px;
+    flex: 1;               /* 🔥 fills remaining space */
+    min-height: 0;         /* 🔥 fixes flex overflow issue */
 }
 
+/* LEFT SIDE TEXT */
 .popup-left {
-    width: 60%;
+    width: 55%;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
+/* RIGHT SIDE IMAGE */
 .popup-right {
-    width: 40%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* IMAGE CARD STYLE */
 .popup-right img {
     width: 100%;
+    height: 230px;
+    object-fit: cover;
+
+    border-radius: 18px;
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.popup-right img:hover {
+    transform: scale(1.04);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.25),
+        0 0 25px rgba(59,130,246,0.25);
+}
+/* ================================================= */
+/*        TYPOGRAPHY + AESTHETIC UPGRADE            */
+/* ================================================= */
+
+/* General text styling */
+.popup-left p {
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+/* Label emphasis */
+.popup-left p strong {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* Rating badge (optional use: class="rating") */
+.popup-left .rating {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 6px;
+    box-shadow: 0 4px 10px rgba(59,130,246,0.25);
+}
+
+/* Section headers like "Menu" */
+.popup-left h4 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    position: relative;
+    padding-left: 12px;
+}
+
+/* Accent bar */
+.popup-left h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    height: 18px;
+    width: 4px;
+    background: linear-gradient(to bottom, #3b82f6, #6366f1);
+    border-radius: 4px;
+}
+
+/* Menu list */
+.popup-left ul {
+    padding-left: 0;
+    margin-top: 6px;
+}
+
+.popup-left ul li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #334155;
+    padding-left: 24px;
+    position: relative;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.popup-left ul li::before {
+    content: "⭐";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 14px;
+}
+
+.popup-left ul li:hover {
+    transform: translateX(4px);
+    color: #1e40af;
+}
+
+/* Smooth scrollbar */
+.popup-left::-webkit-scrollbar {
+    width: 6px;
+}
+
+.popup-left::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
     border-radius: 10px;
+}
+
+.popup-left::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ================================================= */
+/*               CUSTOM MAP TOOLTIP                 */
+/* ================================================= */
+
+.custom-tooltip {
+    background: linear-gradient(135deg, #1f1f3a, #2b2b55);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-tooltip-top:before {
+    border-top-color: #2b2b55 !important;
+}
+
+/* Keep Leaflet controls below navbar */
+.leaflet-top,
+.leaflet-bottom {
+    z-index: 500 !important;
 }

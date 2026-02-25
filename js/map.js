@@ -1,4 +1,5 @@
 // Initialize map
+
 let allMarkers = [];
 const map = L.map('map-container').setView([12.8406, 80.1532], 16);
 
@@ -25,8 +26,11 @@ function getMarkerIcon(type) {
         case "hostel":
             iconUrl = "assets/icons/marker-icon-green.png";
             break;
-        case "near-campus":
+        case "sports":
             iconUrl = "assets/icons/marker-icon-orange.png";
+            break;
+        case "other":
+            iconUrl = "assets/icons/marker-icon-yellow.png";
             break;
         default:
             iconUrl = "assets/icons/marker-icon-blue.png";
@@ -49,14 +53,22 @@ fetch("data/locations.json")
     .then(response => response.json())
     .then(data => {
 
+        // First create all markers
         data.forEach(location => {
 
             const marker = L.marker(location.coordinates, {
                 icon: getMarkerIcon(location.type)
             }).addTo(map);
 
-            marker.locationType = location.type; // store type
-            marker.locationData = location;      // store full data
+            marker.bindTooltip(location.name, {
+                permanent: false,
+                direction: "top",
+                offset: [0, -15],
+                className: "custom-tooltip"
+            });
+
+            marker.locationType = location.type;
+            marker.locationData = location;
 
             marker.on("click", function () {
                 showPopup(location);
@@ -64,6 +76,29 @@ fetch("data/locations.json")
 
             allMarkers.push(marker);
         });
+
+        // 🔥 NOW handle redirect (AFTER markers exist)
+        const params = new URLSearchParams(window.location.search);
+        const locationName = params.get("location");
+
+        if (locationName) {
+
+            const targetMarker = allMarkers.find(marker =>
+                marker.locationData.name === locationName
+            );
+
+            if (targetMarker) {
+
+                map.setView(targetMarker.getLatLng(), 17);
+                showPopup(targetMarker.locationData);
+
+                const mapSection = document.getElementById("mapSection");
+                if (mapSection) {
+                    mapSection.scrollIntoView({ behavior: "smooth" });
+                }
+
+            }
+        }
 
     })
     .catch(error => console.error("Fetch error:", error));
@@ -94,3 +129,17 @@ function showPopup(data) {
 closeBtn.addEventListener("click", function () {
     popup.classList.remove("active");
 });
+
+window.filterMarkers = function(type) {
+
+    allMarkers.forEach(marker => {
+
+        if (marker.locationType === type) {
+            marker.addTo(map);
+        } else {
+            map.removeLayer(marker);
+        }
+
+    });
+
+};
