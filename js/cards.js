@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
             expandCard(wrapper, subTabsContainer, type);
             filterMarkers(type);
 
+            // 🔥 Soft upward scroll
+            const mapSection = document.getElementById("mapSection");
+            if (mapSection) {
+                window.scrollTo({
+                    top: mapSection.offsetTop - 60,  // adjust this number if needed
+                    behavior: "smooth"
+                });
+}
+
         });
 
     });
@@ -67,7 +76,16 @@ function generateSubTabs(container, type) {
             tab.innerText = marker.locationData.name;
 
             tab.onclick = () => {
-                map.setView(marker.getLatLng(), 17);
+
+                // Scroll to map smoothly
+                document.getElementById("mapSection").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+                // Zoom to marker
+                map.setView(marker.getLatLng(), 18);
+
+                // Open popup
                 showPopup(marker.locationData);
             };
 

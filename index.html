@@ -14,31 +14,29 @@
 </head>
 <body>
 
-    <!-- TOP NAVBAR -->
     <header class="navbar">
         <div class="logo">VITMaps</div>
         <div class="account">My Account</div>
     </header>
 
-    <!-- MAP SECTION -->
-    <section class="map-section">
+    <section class="map-section" id="mapSection">
     <div id="map-container">
 
-        <!-- Sliding Panel INSIDE map -->
         <div id="map-popup" class="map-popup">
             <div class="popup-content">
 
                 <div class="popup-header">
-                    <div class="popup-actions">
-                        <button>Share</button>
-                        <button>Save</button>
-                        <button id="closePopupBtn">X</button>
-                    </div>
+                <h2 id="popup-name">Place Name</h2>
+
+                <div class="popup-actions">
+                    <button>Share</button>
+                    <button>Save</button>
+                    <button id="closePopupBtn">X</button>
                 </div>
+            </div>
 
                 <div class="popup-body">
                     <div class="popup-left">
-                        <h3 id="popup-name">Place Name</h3>
                         <p id="popup-type"></p>
                         <p id="popup-rating"></p>
                         <p id="popup-desc"></p>
@@ -56,33 +54,55 @@
     </div>
         </section>
     <!-- CATEGORY CARDS -->
-<section class="categories">
+<section class="category-section">
+    <h2 class="category-heading">Explore Campus</h2>
+    <p class="category-subtext">
+        Discover buildings, hostels, food outlets, and facilities across VIT Chennai
+    </p>     
+    <div class="categories">
 
-    <div class="category-wrapper">
-        <div class="category-card" data-type="food">Food</div>
-        <div class="sub-tabs"></div>
-    </div>
+        <div class="category-wrapper">
+            <div class="category-card" data-type="food">
+                <span class="card-icon">🍔</span>
+                <span class="card-title">Food</span>
+            </div>
+            <div class="sub-tabs"></div>
+        </div>
 
-    <div class="category-wrapper">
-        <div class="category-card" data-type="academic">Blocks / Admin</div>
-        <div class="sub-tabs"></div>
-    </div>
+        <div class="category-wrapper">
+            <div class="category-card" data-type="academic">
+                <span class="card-icon">🏢</span>
+                <span class="card-title">Blocks / Admin</span>
+            </div>
+            <div class="sub-tabs"></div>
+        </div>
 
-    <div class="category-wrapper">
-        <div class="category-card" data-type="hostel">Hostels</div>
-        <div class="sub-tabs"></div>
-    </div>
+        <div class="category-wrapper">
+            <div class="category-card" data-type="hostel">
+                <span class="card-icon">🏠</span>
+                <span class="card-title">Hostels</span>
+            </div>
+            <div class="sub-tabs"></div>
+        </div>
 
-    <div class="category-wrapper">
-        <div class="category-card" data-type="sports">Sports Areas</div>
-        <div class="sub-tabs"></div>
-    </div>
+        <div class="category-wrapper">
+            <div class="category-card" data-type="sports">
+                <span class="card-icon">🏏</span>
+                <span class="card-title">Sports Areas</span>
+            </div>
+            <div class="sub-tabs"></div>
+        </div>
 
-    <div class="category-wrapper">
-        <div class="category-card" data-type="near-campus">Near Campus</div>
-        <div class="sub-tabs"></div>
-    </div>
+        <div class="category-wrapper">
+            <div class="category-card" data-type="near-campus">
+                <span class="card-icon">📍</span>
+                <span class="card-title">Near Campus</span>
+            </div>
+            <div class="sub-tabs"></div>
+        </div>
 
+</section>
+</div>
 </section>
     <!-- Leaflet JS -->
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
